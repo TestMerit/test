@@ -699,6 +699,14 @@ section.test .logo  img {
 	}
 }
 @media (max-width: 767px) {
+	.container {
+	height: 85%;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
 	.test-block .confident-block .buttons a {
 	    width: 150px;
 	    height: 40px;
@@ -815,6 +823,14 @@ section.test .logo  img {
 	}
 }
 @media (max-width: 399px){
+		.container {
+	height: 85%;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
 	.slider {
 		height: 100vh;
 	}
@@ -963,11 +979,27 @@ section.test .logo  img {
 	}
 }
 @media (max-height: 584px){
+		.container {
+	height: 85%;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
 	.test-block form .item {
 		margin-bottom: 10px;
 	}
 }
 @media (min-width: 576px){
+		.container {
+	height: 85%;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
 	.container {
 	    max-width: 540px;
 	}
