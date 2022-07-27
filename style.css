@@ -757,7 +757,7 @@ section.test .logo  img {
 	}
 	.test-block .bottom-buttons a {
 		padding: 0 15px;
-		height: 45px;
+		width:100%;
 		font-size: 14px;
 	}
 	.test-block .bottom-buttons a:first-child {
