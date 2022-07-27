@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>JUST javascript code here</title>
+    <script src="question.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link href="style.css" rel="stylesheet">
+    <style>
+
+
+    </style>
+</head>
+<body>
+
+
+
+<div class="start">
+    <div class="container">
+        <div class="text-block">
+            <a href="#" class="logo">
+                <img src="logo.png" alt="">
+
+            </a>
+            <h1>Тест на уровень английского языка</h1>
+            <p>
+                Узнайте свой уровень английского языка пройдя наш тест С <span>50</span> вопросами.
+            </p>
+            <a onclick='start()' class="start_btn" >Начать тест!</a>
+        </div>
+    </div>
+</div>
+
+<form id="container" class='test  text-center' name='Form'>
+
+    <div class="test-block container">
+        <div class="head">
+            <a href="#" class="logo mobile-logo">
+                <img src="logo.png" alt="">
+            </a>
+            <h2>
+                <img src="title-icon.png" alt="">
+                Тест на проверку уровня английского языка
+            </h2>
+            <div class="pageLoad-block">
+                <div class="loadLine">
+                    <span class="fill"></span>
+                </div>
+                <div class="text">
+                    <span class="count">01</span>
+                    <span>/ 50</span>
+                </div>
+            </div>
+        </div>
+        <div class="slider">
+
+            <div class='test-content main-test-content '>
+
+
+            </div>
+
+            <div class="row slider container end">
+
+                <div class=" test-content propeller ">
+                    <div class="top-title">
+                        <img src="check.png" alt="">
+                        Тест успешно пройден!
+                    </div>
+                    <div id="answers">
+                    <form action="#" class="propeller-form form-control" autocomplete="off">
+                        <input type="text" id="name" name="name" placeholder="Ваше имя*" class="form-control" required><br>
+
+                        <input type="tel"  id="phone" name="phone" value="+998" placeholder="Ваш номер телефона" class="form-control">
+                        <div style="display: flex;align-items: center;justify-content: center;width: 100%;margin-bottom: 20px;">
+                            <input type="checkbox" name="prefer" style="width: 16px;height: 16px;margin: 0;padding: 0;margin-right: 10px;" value="Да">
+                            <p>Хочу учить английский язык!</p>
+                        </div>
+                        <input type="hidden" name="test">
+                        <button type="submit" onclick="results()" id="add_button" class="btn btn-lg btn-dark">
+                            Узнать результат
+                            <img src="whiteRight-arrow.png" alt="">
+                        </button>
+                    </form>
+                        </div>
+                </div>
+            </div>
+            <div class='bottom-buttons d-grid gap-2 ' >
+                <a onclick='next()' type='button' class='continue'>Продолжить</a>
+                <a onclick='back()' type='button' class='continue'>Назад</a>
+            </div>
+
+
+
+
+
+
+        </div>
+    </div>
+</form>
+
+<script type="text/javascript">
+
+    const token = '5494790195:AAH8sznNcdRmzhOMOp-dAWrFWpSw9eboOQQ';
+    const chatId = '-1001548760706';
+    function start()
+    {
+
+        document.querySelector("#container").style.display = 'block';
+
+        document.querySelector('#test-item1').style.display = 'block';
+
+
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelector('.end').style.display = 'none';
+
+        document.querySelector("#container").style.display = 'none'
+
+        Questions.forEach(function (Vp, index) {
+
+
+            console.log(index + 1, Vp.question)
+
+            let D = "";
+            let dsL = "";
+            let question1 = "";
+            let i = index + 1
+            let GroupS = ""
+            let GroupE = ""
+            let side = ""
+            Vp.answers.forEach(function (issue, indexA) {
+                console.log(issue.answer);
+                if (indexA == 0) {
+                    GroupS = "<div class='item'>";
+                    GroupE = "";
+                    side = "right"
+                }
+                if (indexA == 1) {
+                    GroupS = "";
+                    GroupE = "</div><br>";
+                    side = "left"
+
+                }
+                if (indexA == 2) {
+                    GroupS = "<div class='item'>";
+                    GroupE = "";
+                    side = "right"
+
+                }
+                if (indexA == 3) {
+                    GroupS = "";
+                    GroupE = "</div><br>";
+                    side = "left"
+
+                }
+
+
+                D += GroupS + "<input class='btn-check' autocomplete='off' type='radio' id='radio" + i + indexA + "' name='radioName" + index + "' value='" + issue.correct + "'><label class='btn btn-outline-danger option' style='margin-" + side + ":3%; width:40%' for='radio" + i + indexA + "'>" + issue.answer + "</label>" + GroupE;
+
+
+            });
+
+            dsL += "<br><form class='container'>" + D + "<br></form><input type='radio' class='form-check-input' name='radioName" + index + "' value='false' checked='checked' hidden>";
+            question1 += "<span class='circle-number'>" + i + "</span></div>" + "<h4 id='question' name='question" + index + "'>" + Vp['question'] + "</h4>" + "<br>";
+
+
+            document.getElementsByClassName("main-test-content")[0].innerHTML += "<div class='test-item' id='test-item" + i + "'><div class='answer'><div class='question-block'> " + question1 + dsL + "</div></div>";
+            document.querySelector('#test-item' + i).style.display = 'none';
+            console.log(i)
+            console.log('#test-item' + i)
+
+        });
+
+    })
+    let count = 1
+
+    let score = 0
+
+    function next() {
+        if (count == 50) {
+            count = 50;
+            document.getElementsByClassName("bottom-buttons")[0].innerHTML = "<a onclick='end()' type='button' class='continue'>Завершить тест</a>";
+        }
+        count++;
+
+        let activeTab2 = document.querySelector('#test-item' + count).style.display = 'block';
+        let c = count - 1;
+        let activeTab3 = document.querySelector('#test-item' + c).style.display = 'none';
+        document.getElementsByClassName("count")[0].innerHTML = count;
+
+        let op = count * 2;
+        document.querySelector(".fill").style.width = op + "%";
+        let radios = document.querySelector('input[name=radioName' + (count - 2) + ']:checked');
+
+
+        if (radios.value == "true") {
+            score += 1;
+            console.log(score)
+
+        } else {
+            score += 0;
+        }
+
+
+    }
+
+
+    function back() {
+        if (count > 1) {
+
+            let activeTab3 = document.querySelector('#test-item' + count).style.display = 'none';
+
+            count--;
+            let activeTab2 = document.querySelector('#test-item' + count).style.display = 'block';
+
+
+            let radios = document.querySelector('input[name=radioName' + (count - 1) + ']:checked');
+            if (radios.value == "true") {
+                score -= 1
+                console.log(score)
+            }
+            let op = count * 2;
+            document.querySelector(".fill").style.width = op + "%";
+
+
+        }
+
+    }
+
+    function end() {
+        document.querySelector('#test-item50').style.display = 'none';
+        document.querySelector('.end').style.display = 'block';
+        document.querySelector('.start').style.display = 'none';
+        document.querySelector('.propeller ').style.display = 'block';
+
+        document.querySelector('.main-test-content ').style.display = 'none';
+        document.getElementsByClassName("bottom-buttons")[0].innerHTML = " ";
+    }
+    function results() {
+
+        let isbutton = document.querySelector('input[name=prefer]:checked')
+        let result_score = ""
+        let i = (count / 100);
+
+
+        if (score < 20 * i) {
+            result_score = "Beginner " + Math.round((score * 10)) + "%"
+        } else if (score > 20 * i && score < 50 * i) {
+            result_score =  "Elementary " + Math.round((score - 8) * 6.6) + "%"
+
+        } else if (score > 50 * i && score < 70 * i) {
+            result_score = "Pre-intermediate " + Math.round((score - 25) * 10) + "%"
+
+        } else if (score > 70 * i) {
+            result_score = "Intermediate" + Math.round((score - 35) * 6.6) + "%"
+
+        }
+
+        const name = document.querySelector('#name').value;
+        const phone = document.querySelector('#phone').value;
+        const message = `Fullname: ${name}\nPhone: ${phone}\nScore: ${result_score}\nButton: ${isbutton}`;
+
+        $.ajax({
+            type: 'POST',
+            url: `https://api.telegram.org/bot${token}/sendMessage`,
+            data: {
+                chat_id: chatId,
+                text: message,
+                parse_mode: 'html',
+            },
+            success: function (res) {
+                console.debug(res);
+                $('#response').text('Message sent');
+            },
+            error: function (error) {
+                console.error(error);
+            }
+        });
+
+
+            document.getElementsByClassName("results")[0].innerHTML = "";
+            document.getElementById("answers").innerHTML += "<h4 class='reslut'>"+result_score+"</h4>";
+
+
+
+
+    }
+
+
+</script>
+
+</body>
+</html>
