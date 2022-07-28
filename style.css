@@ -830,6 +830,8 @@ section.test .logo  img {
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
+			img{
+			width:100%}
 }
 	.slider {
 		height: 100vh;
