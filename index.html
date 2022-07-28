@@ -12,7 +12,7 @@
     <link href="style.css" rel="stylesheet">
     <style>
 
-#zatemnenie {
+        #zatemnenie {
             background: rgba(102, 102, 102, 0.7);
             width: 100%;
             height: 100%;
@@ -22,8 +22,8 @@
             display: none;
         }
         #okno {
-            width: 60%;
-            height: 90%;
+            width: 40%;
+            height: 40%;
             text-align: center;
             padding: 15px;
             border: 3px solid #a69d9d;
@@ -37,9 +37,7 @@
             margin: auto;
             background: #fff;
         }
-        .bottom{
-            margin-top: 50%;
-        }
+
     </style>
 </head>
 <body>
@@ -62,7 +60,8 @@
     </div>
 </div>
 
-<form id="container" class='test  text-center' action='index.html' name='Form'>
+<form id="container" class='test  text-center'  name='Form'>
+
 
     <div class="test-block container">
         <div class="head">
@@ -98,26 +97,26 @@
                         Тест успешно пройден!
                     </div>
                     <div id="answers">
-                    <form action="#" class="propeller-form form-control" autocomplete="off">
-                        <input type="text" id="name" name="name" placeholder="Ваше имя*" class="form-control" required><br>
+                        <form action="#" class="propeller-form form-control" autocomplete="off">
+                            <input type="text" id="name" name="name" placeholder="Ваше имя*" class="form-control" required><br>
 
-                        <input type="tel"  id="phone" name="phone" value="+998" placeholder="Ваш номер телефона" class="form-control">
-                        <div style="display: flex;align-items: center;justify-content: center;width: 100%;margin-bottom: 20px;">
-                            <input type="checkbox" name="prefer" style="width: 16px;height: 16px;margin: 0;padding: 0;margin-right: 10px;" value="Да">
-                            <p>Хочу учить английский язык!</p>
-                        </div>
-                        <input type="hidden" name="test">
-                        <button type="submit" onclick="results()" id="add_button" class="btn btn-lg btn-dark">
-                            Узнать результат
-                            <img src="whiteRight-arrow.png" alt="">
-                        </button>
-                    </form>
-                        </div>
+                            <input type="tel"  id="phone" name="phone" value="+998" placeholder="Ваш номер телефона" class="form-control">
+                            <div style="display: flex;align-items: center;justify-content: center;width: 100%;margin-bottom: 20px;">
+                                <input type="checkbox" name="prefer" style="width: 16px;height: 16px;margin: 0;padding: 0;margin-right: 10px;" value="Да">
+                                <p>Хочу учить английский язык!</p>
+                            </div>
+                            <input type="hidden" name="test">
+                            <button type="submit" onclick="results()" id="add_button" class="btn btn-lg btn-dark">
+                                Узнать результат
+                                <img src="whiteRight-arrow.png" alt="">
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
 
 
-                <div class='bottom-buttons d-grid gap-2 ' >
+            <div class='bottom-buttons d-grid gap-2 ' >
                 <a onclick='next()' type='button' class='continue'>Продолжить</a>
                 <a onclick='back()' type='button' class='continue'>Назад</a>
             </div>
@@ -125,19 +124,20 @@
 
 
         </div>
+
     </div>
 
 
 </form>
-    <div id="zatemnenie">
-    <div id="okno">
+
+<div id="zatemnenie">
+    <div id="okno ">
         <br>
 
         <br>
     </div>
 
 </div>
-
 <script type="text/javascript">
 
     const token = '5494790195:AAH8sznNcdRmzhOMOp-dAWrFWpSw9eboOQQ';
@@ -277,6 +277,7 @@
         document.querySelector('.main-test-content ').style.display = 'none';
         document.getElementsByClassName("bottom-buttons")[0].innerHTML = " ";
     }
+    let message = "";
     function results() {
 
         let isbutton = document.querySelector('input[name=prefer]:checked')
@@ -287,7 +288,7 @@
         if (score < 20 * i) {
             result_score = "Beginner " + Math.round((score * 10)) + "%"
         } else if (score > 20 * i && score < 50 * i) {
-            result_score =  "Elementary " + Math.round((score - 8) * 6.6) + "%"
+            result_score = "Elementary " + Math.round((score - 8) * 6.6) + "%"
 
         } else if (score > 50 * i && score < 70 * i) {
             result_score = "Pre-intermediate " + Math.round((score - 25) * 10) + "%"
@@ -296,10 +297,9 @@
             result_score = "Intermediate" + Math.round((score - 35) * 6.6) + "%"
 
         }
-
         const name = document.querySelector('#name').value;
         const phone = document.querySelector('#phone').value;
-        const message = `Fullname: ${name}\nPhone: ${phone}\nScore: ${result_score}\nButton: ${isbutton}`;
+        message = `Fullname: ${name}\nPhone: ${phone}\nScore: ${result_score}`;
 
         $.ajax({
             type: 'POST',
@@ -318,17 +318,14 @@
             }
         });
 
-        if(document.querySelector('input[name=name]').value != " ") {
-            document.querySelector('#zatemnenie').style.display = "block";
-
-            document.getElementById("okno").innerHTML += "<div class=''><h3>Ваш уровень" + result_score + "</h3>  <br><br><br>  <a href=\"#\" onclick=\"restart()\" class=\"btn btn-dark bottom\">Закрыть окно</a>\n</div>";
-
-        }
-    function restart(){
-        window.location.reload();
-
+        alert(message)
 
     }
+
+
+
+    function restart(){
+        alert(message)
 
 
     }
