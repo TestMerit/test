@@ -832,8 +832,7 @@ section.test .logo  img {
 
 	}
 	.bottom-buttons{
-		postion: absolute;
-		bottom:0px;
+		position: absolute;
 	}
 	
 	.container {
@@ -852,7 +851,7 @@ section.test .logo  img {
 			width:100%;
 			}
 			.bottom-buttons{
-		postion: absolute;
+		position: absolute;
 		bottom:35%;
 				right:30%;
 	}
@@ -887,8 +886,8 @@ section.test .logo  img {
 	}
 
 	.test-block .bottom-buttons {
-		postion: absolute;
-		bottom:35%;
+		position: absolute;
+		bottom:20%;
 		right:30%;
 	}
 	.test-block .bottom-buttons a {
