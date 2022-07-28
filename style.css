@@ -823,6 +823,16 @@ section.test .logo  img {
 	}
 }
 @media (max-width: 399px){
+	.test-block .qustion-block h4{
+		font-size:14px;
+	}
+	.test-block .qustion-block .item{
+		margin: 0px !important;
+	}
+	.bottom-buttons{
+		postion: absolute;
+		bottom:0px
+	}
 		.container {
 	height: 85%;
     width: 100%;
