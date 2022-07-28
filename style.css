@@ -830,13 +830,13 @@ section.test .logo  img {
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
-			img .mobile-logo{
+			.mobile-logo{
 			width:100%;
 			}
 }
 	@media (min-width: 240px){
 	
-			img .mobile-logo {
+		 .mobile-logo {
 			width:100%;
 			}
 }
