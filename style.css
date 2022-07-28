@@ -657,9 +657,7 @@ section.test .logo  img {
 		padding: 10px;
 	}
 	.test-block .bottom-buttons {
-		position:absolute;
-		bottom: 25%;
-		right: 30%;
+
 		
 	}
 	.test-block .propeller .top-title img {
@@ -708,7 +706,7 @@ section.test .logo  img {
 }
 @media (max-width: 767px) {
 	.container {
-	height: 85%;
+	min-height: %;
     width: 100%;
     padding-right: 15px;
     padding-left: 15px;
@@ -841,9 +839,7 @@ section.test .logo  img {
 
 	}
 	.bottom-buttons{
-		position: absolute;
-		bottom: 25%;
-		right: 30%;
+
 	}
 	
 	.container {
@@ -862,9 +858,7 @@ section.test .logo  img {
 			width:100%;
 			}
 			.bottom-buttons{
-		position: absolute;
-		bottom:35%;
-				right:30%;
+
 	}
 }
 	.slider {
@@ -897,9 +891,7 @@ section.test .logo  img {
 	}
 
 	.test-block .bottom-buttons {
-		position: absolute;
-		bottom:20%;
-		right:30%;
+	
 	}
 	.test-block .bottom-buttons a {
 		width: auto;
