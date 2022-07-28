@@ -834,6 +834,12 @@ section.test .logo  img {
 			width:100%;
 			}
 }
+	@media (min-width: 240px){
+	
+			img{
+			width:100%;
+			}
+}
 	.slider {
 		height: 100vh;
 	}
