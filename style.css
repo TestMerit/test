@@ -1044,7 +1044,7 @@ section.test .logo  img {
 }
 @media (min-width: 1200px) {
 	.container {
-		height: 90%;
+		min-height: 93%;
 	    max-width: 1140px;
 	}
 }
