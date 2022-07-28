@@ -833,18 +833,18 @@ section.test .logo  img {
 	}
 	.bottom-buttons{
 		postion: absolute;
-		bottom:0px
+		bottom:0px;
 	}
-		.container {
-	height: 85%;
+	
+	.container {
+    height: 85%;
     width: 100%;
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
-			.mobile-logo img{
-			width:100%;
-			}
+	.mobile-logo img{
+			width:100%;}
 }
 	@media (min-width: 240px){
 	
@@ -853,7 +853,7 @@ section.test .logo  img {
 			}
 			.bottom-buttons{
 		postion: absolute;
-		bottom:0px
+		bottom:0px;
 	}
 }
 	.slider {
