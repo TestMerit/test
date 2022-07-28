@@ -151,7 +151,7 @@ section.test .logo  img {
 	font-size: 16px;
 	margin-right: 20px;
 }
-.test-block .question-block h3 {
+.test-block .question-block h4 {
 	font-size: 16px;
 	margin-bottom: 0;
 	width: 65%;
@@ -486,7 +486,7 @@ section.test .logo  img {
 .foundLevel-block .item .circle img {
 	width: 50%;
 }
-.foundLevel-block .item h3 {
+.foundLevel-block .item h4 {
 	text-align: center;
 	font-size: 13px;
 	color: #202c45;
@@ -676,7 +676,7 @@ section.test .logo  img {
 	.succes-restored {
 		padding-top: 40px;
 	}
-	.foundLevel-block .item h3 {
+	.foundLevel-block .item h4 {
 		font-size: 12px;
 	}
 	.foundLevel-block {
@@ -809,7 +809,7 @@ section.test .logo  img {
 		margin-right: 0;
 		margin-bottom: 30px;
 	}
-	.test-block .question-block h3 {
+	.test-block .question-block h4 {
 		width: 80%;
 	}
 	.start .logo {
@@ -883,7 +883,7 @@ section.test .logo  img {
 	.test-block .bottom-buttons a:first-child {
 		margin-right: auto;
 	}
-	.test-block .question-block h3 {
+	.test-block .question-block h4 {
 		font-size: 14px;
 	}
 	.test-block .bottom-buttons a {
