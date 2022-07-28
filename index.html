@@ -12,7 +12,34 @@
     <link href="style.css" rel="stylesheet">
     <style>
 
-
+#zatemnenie {
+            background: rgba(102, 102, 102, 0.7);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+        #okno {
+            width: 60%;
+            height: 90%;
+            text-align: center;
+            padding: 15px;
+            border: 3px solid #a69d9d;
+            border-radius: 10px;
+            color: #1a4437;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            background: #fff;
+        }
+        .bottom{
+            margin-top: 50%;
+        }
     </style>
 </head>
 <body>
@@ -102,6 +129,14 @@
 
 
 </form>
+    <div id="zatemnenie">
+    <div id="okno">
+        <br>
+
+        <br>
+    </div>
+
+</div>
 
 <script type="text/javascript">
 
@@ -283,11 +318,17 @@
             }
         });
 
+        if(document.querySelector('input[name=name]').value != " ") {
+            document.querySelector('#zatemnenie').style.display = "block";
 
-            document.getElementsByClassName("results")[0].innerHTML = "";
-            document.getElementById("answers").innerHTML += "<h4 class='reslut'>"+result_score+"</h4>";
+            document.getElementById("okno").innerHTML += "<div class=''><h3>Ваш уровень" + result_score + "</h3>  <br><br><br>  <a href=\"#\" onclick=\"restart()\" class=\"btn btn-dark bottom\">Закрыть окно</a>\n</div>";
+
+        }
+    function restart(){
+        window.location.reload();
 
 
+    }
 
 
     }
