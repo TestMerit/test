@@ -853,7 +853,7 @@ section.test .logo  img {
 			}
 			.bottom-buttons{
 		postion: absolute;
-		bottom:40%;
+		bottom:35%;
 				right:30%;
 	}
 }
@@ -885,13 +885,10 @@ section.test .logo  img {
 		height: 24px;
 		width: 24px;
 	}
+
 	.test-block .bottom-buttons {
-				bottom:40%;
-				right:30%;
-	}
-	.test-block .bottom-buttons {
-		display:absolute;
-		bottom:40%;
+		postion: absolute;
+		bottom:35%;
 		right:30%;
 	}
 	.test-block .bottom-buttons a {
