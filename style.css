@@ -831,7 +831,8 @@ section.test .logo  img {
     margin-right: auto;
     margin-left: auto;
 			img{
-			width:100%}
+			width:100%;
+			}
 }
 	.slider {
 		height: 100vh;
