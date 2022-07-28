@@ -657,7 +657,10 @@ section.test .logo  img {
 		padding: 10px;
 	}
 	.test-block .bottom-buttons {
-		padding-top: 25px;
+		position:absolute;
+		bottom: 25%;
+		right: 30%;
+		
 	}
 	.test-block .propeller .top-title img {
 	    width: 30px;
@@ -831,6 +834,7 @@ section.test .logo  img {
 	.test-block .qustion-block h4{
 		font-size:14px;
 		
+		
 	}
 	.test-block .qustion-block .item{
 		margin: 0px !important;
@@ -838,10 +842,12 @@ section.test .logo  img {
 	}
 	.bottom-buttons{
 		position: absolute;
+		bottom: 25%;
+		right: 30%;
 	}
 	
 	.container {
-    height: 85%;
+    height: 90%;
     width: 100%;
     padding-right: 15px;
     padding-left: 15px;
