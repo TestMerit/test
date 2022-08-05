@@ -60,7 +60,7 @@
     </div>
 </div>
 
-<form id="container" class='test  text-center'  name='Form'>
+<form id="container" class='test  text-center'  action="javascript:void(0)" name='Form'>
 
 
     <div class="test-block container">
@@ -90,15 +90,18 @@
             </div>
 
             <div class="row slider container end">
+                <div class="results">
 
+
+                </div>
                 <div class=" test-content propeller ">
                     <div class="top-title">
                         <img src="check.png" alt="">
                         Тест успешно пройден!
                     </div>
                     <div id="answers">
-                        <form action="#" class="propeller-form form-control" autocomplete="off">
-                            <input type="text" id="name" name="name" placeholder="Ваше имя*" class="form-control" required><br>
+                        <form action="javascript:void(0)" class="propeller-form form-control" autocomplete="off">
+                            <input type="text" id="name" name="name" placeholder="Ваше имя*" value="" class="form-control" required><br>
 
                             <input type="tel"  id="phone" name="phone" value="+998" placeholder="Ваш номер телефона" class="form-control">
                             <div style="display: flex;align-items: center;justify-content: center;width: 100%;margin-bottom: 20px;">
@@ -112,6 +115,7 @@
                             </button>
                         </form>
                     </div>
+
                 </div>
             </div>
 
@@ -280,7 +284,6 @@
     let message = "";
     function results() {
 
-        let isbutton = document.querySelector('input[name=prefer]:checked')
         let result_score = ""
         let i = (count / 100);
 
@@ -297,10 +300,13 @@
             result_score = "Intermediate" + Math.round((score - 35) * 6.6) + "%"
 
         }
+        document.querySelector('.propeller ').style.display = 'none';
+
+        document.getElementsByClassName('results')[0].innerHTML += `<h3 style="margin-top: 15%">Ваш результат: <br><span style="color:rgba(238,49,38,0.7)"> ${result_score}</span></h3><br><button class="btn btn-lg btn-dark" onclick="restart()">Reload</button>`;
+
         const name = document.querySelector('#name').value;
         const phone = document.querySelector('#phone').value;
         message = `Fullname: ${name}\nPhone: ${phone}\nScore: ${result_score}`;
-
         $.ajax({
             type: 'POST',
             url: `https://api.telegram.org/bot${token}/sendMessage`,
@@ -322,13 +328,13 @@
     }
 
 
+    function restart() {
 
-    function restart(){
-        alert(message)
+        window.location.reload();
 
 
-    }
 
+}
 
 </script>
 
