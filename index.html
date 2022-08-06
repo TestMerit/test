@@ -282,59 +282,61 @@
         document.getElementsByClassName("bottom-buttons")[0].innerHTML = " ";
     }
     let message = "";
-    function results() {
-
-        let result_score = ""
-        let i = (count / 100);
 
 
-        if (score < 20 * i) {
-            result_score = "Beginner " + Math.round((score * 10)) + "%"
-        } else if (score > 20 * i && score < 50 * i) {
-            result_score = "Elementary " + Math.round((score - 8) * 6.6) + "%"
+        function results() {
+            if(document.querySelector('#name').value.length > 3 ) {
 
-        } else if (score > 50 * i && score < 70 * i) {
-            result_score = "Pre-intermediate " + Math.round((score - 25) * 10) + "%"
+            let result_score = ""
+            let i = (count / 100);
 
-        } else if (score > 70 * i) {
-            result_score = "Intermediate" + Math.round((score - 35) * 6.6) + "%"
+
+            if (score < 20 * i) {
+                result_score = "Beginner " + Math.round((score * 10)) + "%"
+            } else if (score > 20 * i && score < 50 * i) {
+                result_score = "Elementary " + Math.round((score - 8) * 6.6) + "%"
+
+            } else if (score > 50 * i && score < 70 * i) {
+                result_score = "Pre-intermediate " + Math.round((score - 25) * 10) + "%"
+
+            } else if (score > 70 * i) {
+                result_score = "Intermediate" + Math.round((score - 35) * 6.6) + "%"
+
+            }
+            document.querySelector('.propeller ').style.display = 'none';
+
+            document.getElementsByClassName('results')[0].innerHTML += `<h3 style="margin-top: 15%">Ваш результат: <br><span style="color:rgba(238,49,38,0.7)"> ${result_score}</span></h3><br><button class="btn btn-lg btn-dark" onclick="restart()">Reload</button>`;
+
+            const name = document.querySelector('#name').value;
+            const phone = document.querySelector('#phone').value;
+            message = `Fullname: ${name}\nPhone: ${phone}\nScore: ${result_score}`;
+            $.ajax({
+                type: 'POST',
+                url: `https://api.telegram.org/bot${token}/sendMessage`,
+                data: {
+                    chat_id: chatId,
+                    text: message,
+                    parse_mode: 'html',
+                },
+                success: function (res) {
+                    console.debug(res);
+                    $('#response').text('Message sent');
+                },
+                error: function (error) {
+                    console.error(error);
+                }
+            });
+
+            }
 
         }
-        document.querySelector('.propeller ').style.display = 'none';
-
-        document.getElementsByClassName('results')[0].innerHTML += `<h3 style="margin-top: 15%">Ваш результат: <br><span style="color:rgba(238,49,38,0.7)"> ${result_score}</span></h3><br><button class="btn btn-lg btn-dark" onclick="restart()">Reload</button>`;
-
-        const name = document.querySelector('#name').value;
-        const phone = document.querySelector('#phone').value;
-        message = `Fullname: ${name}\nPhone: ${phone}\nScore: ${result_score}`;
-        $.ajax({
-            type: 'POST',
-            url: `https://api.telegram.org/bot${token}/sendMessage`,
-            data: {
-                chat_id: chatId,
-                text: message,
-                parse_mode: 'html',
-            },
-            success: function (res) {
-                console.debug(res);
-                $('#response').text('Message sent');
-            },
-            error: function (error) {
-                console.error(error);
-            }
-        });
-
-
-    }
-
 
     function restart() {
 
         window.location.reload();
 
 
-
-}
+    }
 
 </script>
 
