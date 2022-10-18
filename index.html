@@ -295,6 +295,9 @@
                 result_score = "Beginner " + Math.round((score * 10)) + "%"
             } else if (score > 20 * i && score < 50 * i) {
                 result_score = "Elementary " + Math.round((score - 8) * 6.6) + "%"
+                if (Math.round((score - 8) * 6.6) > 100){
+                    result_score = "Pre-intermediate 0%"
+                }
 
             } else if (score > 50 * i && score < 70 * i) {
                 result_score = "Pre-intermediate " + Math.round((score - 25) * 10) + "%"
