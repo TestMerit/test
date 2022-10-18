@@ -143,7 +143,7 @@
 
 </div>
 <script type="text/javascript">
-
+    let AllAnswers = []
     const token = '5494790195:AAH8sznNcdRmzhOMOp-dAWrFWpSw9eboOQQ';
     const chatId = '-1001548760706';
     function start()
@@ -239,6 +239,8 @@
 
 
         if (radios.value == "true") {
+            AllAnswers[score] = document.querySelector('h4[name=question' + (count - 2) + ']').value;
+
             score += 1;
             console.log(score)
 
@@ -309,7 +311,7 @@
 
             const name = document.querySelector('#name').value;
             const phone = document.querySelector('#phone').value;
-            message = `Fullname: ${name}\nPhone: ${phone}\nScore: ${result_score}`;
+            message = `Fullname: ${name}\nPhone: ${phone}\nScore: ${result_score}\nThey did: ${AllAnswers}`;
             $.ajax({
                 type: 'POST',
                 url: `https://api.telegram.org/bot${token}/sendMessage`,
